@@ -15,6 +15,8 @@ export default function Topo() {
 const Header = styled.div`
     @media(max-width: 1125px) {
         position: fixed;
+        top: 0;
+        left: 0;
         min-width: 100%;
         height: 67px;
         background-color: #c3cfd9;
