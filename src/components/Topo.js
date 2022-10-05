@@ -4,9 +4,9 @@ export default function Topo() {
 
     return (
         <>
-        <Cabecalho>
-            <p>CINEFLEX</p>
-        </Cabecalho>
+            <Cabecalho>
+                <p>CINEFLEX</p>
+            </Cabecalho>
         </>
     );
 

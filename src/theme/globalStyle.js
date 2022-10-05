@@ -67,6 +67,48 @@ const GlobalStyle = createGlobalStyle`
         line-height: 28px;
         letter-spacing: 0.04em;
     }
+
+    .cadeira {
+        width: 26px;
+        height: 26px;
+        margin: 9px 3.5px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cadeiraMenor {
+        width: 24px;
+        height: 24px;
+        margin-bottom: 10px;
+        border-radius: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .cadeira p {
+        font-family: 'Roboto', sans-serif;
+        font-size: 11px;
+        line-height: 13px;
+        letter-spacing: 0.04em;
+        color: #000000;
+    }
+    .selecionado {
+        background: #8dd7cf;
+        border: 1px solid #1aae9e;
+    }
+    .disponivel {
+        background: #c3cfd9;
+        border: 1px solid #808f9d;
+    }
+    .indisponivel {
+        background: #fbe192;
+        border: 1px solid #f7c52b;
+    }
+    ::placeholder {		
+		font-style: italic;
+		color: #afafaf;
+	}
 `;
 
 export default GlobalStyle;

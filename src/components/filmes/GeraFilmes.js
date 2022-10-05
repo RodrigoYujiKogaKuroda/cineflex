@@ -17,13 +17,13 @@ export default function GeraFilmes() {
 
     return (
         <>
-        {items.map(item =>
-            <Movie key={item.id}>
-                <Link to={`/sessoes/${item.id}`}>
-                    <img src={item.posterURL} alt={item.title} />
-                </Link>
-            </Movie>
-        )}
+            {items.map(item =>
+                <Movie key={item.id}>
+                    <Link to={`/sessoes/${item.id}`}>
+                        <img src={item.posterURL} alt={item.title} />
+                    </Link>
+                </Movie>
+            )}
         </>
     );
 

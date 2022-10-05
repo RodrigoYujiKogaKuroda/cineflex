@@ -1,27 +1,31 @@
 import styled from 'styled-components';
 
 export default function Topo({movie, poster, day, hour}) {
+
 	return (
-		<Container>
-            <Poster>
-                <img src={poster} alt={movie}></img>
-            </Poster>
-            {(day !== null) ?
-            <Titulos>
+        <>
+            <Container>
+                <Poster>
+                    <img src={poster} alt={movie}></img>
+                </Poster>
+                {(day !== null) ?
+                <Titulos>
+                    <Titulo>
+                        {movie}
+                    </Titulo>
+                    <Titulo>
+                    {day} - {hour}
+                    </Titulo>
+                </Titulos>
+                :
                 <Titulo>
                     {movie}
                 </Titulo>
-                <Titulo>
-                {day} - {hour}
-                </Titulo>
-            </Titulos>
-            :
-            <Titulo>
-                {movie}
-            </Titulo>
-            }
-        </Container>
+                }
+            </Container>
+        </>
 	);
+
 }
 
 const Container = styled.div`

@@ -5,22 +5,22 @@ export default function GeraLista({sessions}) {
 
     return (
         <>
-        {sessions.map( sessions =>
-            <Dia key={sessions.id}>
-                <Texto>
-                    {sessions.weekday} - {sessions.date}
-                </Texto>
-                <Horarios>
-                    {sessions.showtimes.map( showtime => 
-                        <Horario key={showtime.id}>
-                            <Link to={`/assentos/${showtime.id}`} style={{ textDecoration: 'none' }}>
-                                <p>{showtime.name}</p>
-                            </Link>
-                        </Horario>
-                    )}
-                </Horarios>
-            </Dia>
-        )}
+            {sessions.map( sessions =>
+                <Dia key={sessions.id}>
+                    <Texto>
+                        {sessions.weekday} - {sessions.date}
+                    </Texto>
+                    <Horarios>
+                        {sessions.showtimes.map( showtime => 
+                            <Horario key={showtime.id}>
+                                <Link to={`/assentos/${showtime.id}`} style={{ textDecoration: 'none' }}>
+                                    <p>{showtime.name}</p>
+                                </Link>
+                            </Horario>
+                        )}
+                    </Horarios>
+                </Dia>
+            )}
         </>
     );
 

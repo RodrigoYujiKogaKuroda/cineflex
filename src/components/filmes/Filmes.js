@@ -7,13 +7,13 @@ export default function Filmes() {
 
     return (
         <>
-        <Topo />
-        <div className='menuBody'>
-            <p className='pageTitle'>Selecione o filme</p>
-            <Lista>
-                <GeraFilmes />
-            </Lista>
-        </div>
+            <Topo />
+            <div className='menuBody'>
+                <p className='pageTitle'>Selecione o filme</p>
+                <Lista>
+                    <GeraFilmes />
+                </Lista>
+            </div>
         </>
     );
 

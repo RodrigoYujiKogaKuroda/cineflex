@@ -25,14 +25,14 @@ export default function Sessoes() {
 
     return (
         <>
-        <Topo />
-        <div className='menuBody'>
-            <p className='pageTitle'>Selecione o horário</p>
-            <Lista>
-                <GeraSessoes sessions={sessions}/>
-            </Lista>
-        </div>
-        <Rodape movie={movie} poster={poster} day={null} hour={null} />
+            <Topo />
+            <div className='menuBody'>
+                <p className='pageTitle'>Selecione o horário</p>
+                <Lista>
+                    <GeraSessoes sessions={sessions}/>
+                </Lista>
+            </div>
+            <Rodape movie={movie} poster={poster} day={null} hour={null} />
         </>
     );
 
