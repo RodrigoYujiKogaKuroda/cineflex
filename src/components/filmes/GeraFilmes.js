@@ -10,8 +10,8 @@ export default function GeraFilmes() {
 
     useEffect(() => {
 		const request = axios.get("https://mock-api.driven.com.br/api/v8/cineflex/movies");
-		request.then(resposta => {
-            setItems(resposta.data);
+		request.then(response => {
+            setItems(response.data);
         });
 	}, []);
 

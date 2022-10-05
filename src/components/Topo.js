@@ -4,15 +4,15 @@ export default function Topo() {
 
     return (
         <>
-        <Header>
+        <Cabecalho>
             <p>CINEFLEX</p>
-        </Header>
+        </Cabecalho>
         </>
     );
 
 }
 
-const Header = styled.div`
+const Cabecalho = styled.div`
     @media(max-width: 1125px) {
         position: fixed;
         top: 0;
