@@ -16,14 +16,16 @@ export default function Assentos() {
     const [hour, setHour] = useState([]);
     const [seats, setSeats] = useState([]);
 
+    console.log(seats.length)
+
     useEffect(() => {
-		const requisicao = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${idSessao}/seats`);
-		requisicao.then(resposta => {
-            setMovie(resposta.data.movie.title);
-            setPoster(resposta.data.movie.posterURL);
-            setDay(resposta.data.day.weekday);
-            setHour(resposta.data.name);
-            setSeats(resposta.data.seats);
+		const request = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${idSessao}/seats`);
+		request.then(response => {
+            setMovie(response.data.movie.title);
+            setPoster(response.data.movie.posterURL);
+            setDay(response.data.day.weekday);
+            setHour(response.data.name);
+            setSeats(response.data.seats);
         });
 	}, []);
 
