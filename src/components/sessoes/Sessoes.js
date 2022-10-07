@@ -15,7 +15,7 @@ export default function Sessoes() {
     const [sessions, setSessions] = useState([]);
 
     useEffect(() => {
-		const requisicao = axios.get(`https://mock-api.driven.com.br/api/v8/cineflex/movies/${idFilme}/showtimes`);
+		const requisicao = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/movies/${idFilme}/showtimes`);
 		requisicao.then(response => {
             setMovie(response.data.title);
             setPoster(response.data.posterURL);

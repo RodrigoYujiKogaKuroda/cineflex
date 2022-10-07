@@ -1,3 +1,5 @@
+import { useState, useEffect } from 'react';
+import axios from 'axios';
 import styled from 'styled-components';
 
 import Topo from "./../Topo";
@@ -5,13 +7,23 @@ import GeraFilmes from "./GeraFilmes";
 
 export default function Filmes() {
 
+    const [movies, setMovies] = useState([]);
+
+    useEffect(() => {
+		const request = axios.get("https://mock-api.driven.com.br/api/v5/cineflex/movies");
+		request.then(response => {
+            setMovies(response.data);
+        });
+        request.catch(error => {});
+	}, []);
+
     return (
         <>
             <Topo />
             <div className='menuBody'>
                 <p className='pageTitle'>Selecione o filme</p>
                 <Lista>
-                    <GeraFilmes />
+                    <GeraFilmes movies={movies}/>
                 </Lista>
             </div>
         </>

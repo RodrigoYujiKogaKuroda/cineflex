@@ -3,9 +3,10 @@ import { useParams } from "react-router-dom";
 import axios from 'axios';
 import styled from 'styled-components';
 
-import Topo from "./../Topo"
-import Rodape from "./../Rodape"
-import GeraAssentos from "./GeraAssentos.js"
+import Topo from "./../Topo";
+import Rodape from "./../Rodape";
+import GeraAssentos from "./GeraAssentos.js";
+import Referencia from "./Referencia";
 
 export default function Assentos() {
 
@@ -16,10 +17,8 @@ export default function Assentos() {
     const [hour, setHour] = useState([]);
     const [seats, setSeats] = useState([]);
 
-    console.log(seats.length)
-
     useEffect(() => {
-		const request = axios.get(`https://mock-api.driven.com.br/api/v7/cineflex/showtimes/${idSessao}/seats`);
+		const request = axios.get(`https://mock-api.driven.com.br/api/v5/cineflex/showtimes/${idSessao}/seats`);
 		request.then(response => {
             setMovie(response.data.movie.title);
             setPoster(response.data.movie.posterURL);
@@ -37,6 +36,7 @@ export default function Assentos() {
                 <Sala>
                     <GeraAssentos seats={seats} />
                 </Sala>
+                <Referencia />
             </div>
             <Rodape movie={movie} poster={poster} day={day} hour={hour} />
         </>

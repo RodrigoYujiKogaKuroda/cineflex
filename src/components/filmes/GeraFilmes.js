@@ -1,26 +1,15 @@
-import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
-import axios from 'axios';
 
 import styled from 'styled-components';
 
-export default function GeraFilmes() {
-
-    const [items, setItems] = useState([]);
-
-    useEffect(() => {
-		const request = axios.get("https://mock-api.driven.com.br/api/v8/cineflex/movies");
-		request.then(response => {
-            setItems(response.data);
-        });
-	}, []);
+export default function GeraFilmes({movies}) {
 
     return (
         <>
-            {items.map(item =>
-                <Movie key={item.id}>
-                    <Link to={`/sessoes/${item.id}`}>
-                        <img src={item.posterURL} alt={item.title} />
+            {movies.map(movie =>
+                <Movie key={movie.id}>
+                    <Link to={`/sessoes/${movie.id}`}>
+                        <img src={movie.posterURL} alt={movie.title} />
                     </Link>
                 </Movie>
             )}
