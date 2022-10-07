@@ -10,8 +10,10 @@ export default function GeraAssentos({seats}) {
     function markSeat(index, available) {
         if(available) {
             seatsCopy[index].isAvailable = false;
-            setMarked([...marked, index]);
+        } else {
+            seatsCopy[index].isAvailable = true;
         }
+        setMarked([...marked, index]);
     }
 
     return (

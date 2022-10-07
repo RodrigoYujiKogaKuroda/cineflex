@@ -7,6 +7,7 @@ import Topo from "./../Topo";
 import Rodape from "./../Rodape";
 import GeraAssentos from "./GeraAssentos.js";
 import Referencia from "./Referencia";
+import Formulario from "./Formulario";
 
 export default function Assentos() {
 
@@ -37,6 +38,7 @@ export default function Assentos() {
                     <GeraAssentos seats={seats} />
                 </Sala>
                 <Referencia />
+                <Formulario />
             </div>
             <Rodape movie={movie} poster={poster} day={day} hour={hour} />
         </>
