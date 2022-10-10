@@ -4,24 +4,35 @@ import styled from 'styled-components';
 
 export default function GeraAssentos({seats}) {
 
-    const seatsCopy = seats;
-    const [marked, setMarked] = useState([]);
+    const AVAILABLE_COLOR = "#c3cfd9"
+    const AVAILABLE_BORDER = "#808f9d"
+    const UNAVAILABLE_COLOR = "#fbe192"
+    const UNAVAILABLE_BORDER = "#f7c52b"
+    const SELECTED_COLOR = "#1aae9e"
+    const SELECTED_BORDER = "#0e7d71"
+
+    const seatsCopy = seats.map(a => {return {...a}});
+    const [markedSeat, setMarkedSeat] = useState([]);
 
     function markSeat(index, available) {
-        if(available) {
+        const temporaryMarks = [...markedSeat];
+        if (available && seatsCopy[index].isAvailable === true) {
             seatsCopy[index].isAvailable = false;
+            temporaryMarks.push(index);
         } else {
+            console.log("Não rolou...")
             seatsCopy[index].isAvailable = true;
         }
-        setMarked([...marked, index]);
+        setMarkedSeat(temporaryMarks);
+        console.log(temporaryMarks);
     }
 
     return (
         <>
-            {seatsCopy.map((seat, index) =>
+            {seats.map((seat, index) =>
                 <Cadeira
-                    seatColor={seat.isAvailable ? "#c3cfd9" : "#fbe192" }
-                    borderColor={seat.isAvailable ? "#808f9d" : "#f7c52b" }
+                    seatColor={seatsCopy[index].isAvailable ? AVAILABLE_COLOR : UNAVAILABLE_COLOR }
+                    borderColor={seatsCopy[index].isAvailable ? AVAILABLE_BORDER : UNAVAILABLE_BORDER }
                     onClick={() => {markSeat(index, seat.isAvailable)}}
                     key={seat.id}>
                         <p>{seat.name}</p>
@@ -51,10 +62,5 @@ const Cadeira = styled.div`
         line-height: 13px;
         letter-spacing: 0.04em;
         color: #000000;
-    }
-
-    .selecionado {
-    background: #1aae9e;
-    border: 1px solid #0e7d71;
     }
 `;
